@@ -1,0 +1,11 @@
+{
+  "name": "talktrove",
+  "version": "1.0.0",
+  "description": "TalkTrove: Where every conversation is a valuable discovery in the vast realm of meaningful connections.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sai Teja Bolla",
+  "license": "ISC"
+}
