@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Container,
@@ -14,13 +13,20 @@ import { useHistory } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
 
-const Homepage = () => {
+function Homepage() {
+  const history = useHistory();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (user) history.push("/chats");
+  }, [history]);
+
   return (
     <Container maxW="xl" centerContent>
       <Box
         d="flex"
         justifyContent="center"
-        alignItems="center"
         p={3}
         bg="white"
         w="100%"
@@ -28,8 +34,8 @@ const Homepage = () => {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans" textAlign="center">
-          TalkTrove
+        <Text fontSize="4xl" fontFamily="Work sans">
+          Talk-A-Tive
         </Text>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
@@ -50,6 +56,6 @@ const Homepage = () => {
       </Box>
     </Container>
   );
-};
+}
 
 export default Homepage;
